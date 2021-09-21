@@ -9,9 +9,33 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <header class="page-header">
+      <h1>Acoustic World for Lovers!!!</h1>
+    </header>
+  <nav class="main-nav">
+  <div>
+  <% if current_user.nil? %> <!--this is "current_user" in appcontroller-->
+  <a href="<%= new_session_url %>">Log in</a><!--these two are GET methods, dont need a form-->
+
+  <a href="<%= new_user_url %>">Sign up</a>
+  <% else %>
+    <%= current_user.email %>
+    <form action="<%= session_url %>" method="post"> <!--session_url => DELETE session=>logout-->
+      <!--because method only have post,get => need an input tag to override the post mehod-->
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Logout">
+    </form>
+  <% end %>
+   
+  </div>
+ 
+  </nav>
+  <main>
     <%= yield %>
+    </main>
   </body>
 </html>

@@ -1,0 +1,22 @@
+/* <!-- Add a Music App header and with a snazzy font to application.html.erb -->
+Use flex to display our logged-in or logged-out info in the right-hand side of our Music App header
+Default link styling is pretty ugly, while keeping our <a> tags let's make our links look more like buttons by using background-color and border-radius
+Improve upon our session forms by changing the spacing and alignment of their elements --> */
+header h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-items: flex-end;
+    flex-flow: row;
+}
+
+
+
+.main-nav a {
+    height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+}

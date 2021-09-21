@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: 1
+  ord: 1
+  lyrics: MyText
+  regular: false
+
+two:
+  title: 1
+  ord: 1
+  lyrics: MyText
+  regular: false

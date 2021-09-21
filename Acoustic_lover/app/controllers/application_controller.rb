@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
 
     # expose current_user with the views
-    method_helper :current_user
-    method_helper :logout!
+    helper_method :current_user
+    helper_method :logout!
+
+    
     def require_logged_in!
         redirect_to new_session_url if current_user.nil?
     end
@@ -12,12 +14,12 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-        return nil if current_user.nil?
+        return nil unless session[:session_token]
         @current_user ||= User.find_by(session_token: session[:session_token])
     end
 
 
-    def login!(current_user)
+    def login!(user)
         session[:session_token] = user.session_token
     end
 

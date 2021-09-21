@@ -1,7 +1,7 @@
-# <!--create signup view -->
+<!--create signup view -->
 <section class="page">
+<h2>Let's become an Acoustic Lover!</h2>
 <div class="centered-box">
-<h1> New User</h1>
  <%#= render 'share/errors' %>
     <form action='<%= users_url %>' method="post"> <!--users_url is create method in users controller -->
         <label type="user_email">User email</label>
@@ -11,7 +11,7 @@
         <label>Password</label> <!--since input tag is nested inside label, unesscessary to have "id" and "for"-->
         <input type="password" name="user[password]" value="">
     <br>
-        <input type="submit">
+        <input type="submit" value="Create new account">
  </form>
 </div>
 </section>
