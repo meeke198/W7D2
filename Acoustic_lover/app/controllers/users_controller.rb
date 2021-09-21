@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
-    # before_action :require_logged_in, only: [:index, :show]
+    #for user to signup
+    before_action :require_logged_out, only: [:index, :show]
     def new
         @user = User.new
         render :new 
+    end
+
+    def show
+        @user = User.find(params[:id])
+        render :show 
     end
 
     def create
@@ -16,6 +22,7 @@ class UsersController < ApplicationController
         end
     end
     private
-    params.require(:user).permit(:email, :password)
-    
+    def user_params
+        params.require(:user).permit(:email, :password)
+    end
 end

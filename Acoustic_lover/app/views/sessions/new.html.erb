@@ -1,0 +1,16 @@
+<!-- login show page for user to login-->
+<section class="page">
+<div class="centered-box">
+<h1> Sign in</h1>
+ <%#= render 'share/errors' %>
+ <form action='<%= session_url %>' method="post">
+    <label>User email</label>
+    <input type="text" name="user[:email]">
+<br>
+    <label>Password</label>
+    <input type="password" name="user[password]">
+<br>
+
+<input type="submit"> <!--dont need value here because we will put botton in application.html.erb for all view pages-->
+</div>
+</section>
